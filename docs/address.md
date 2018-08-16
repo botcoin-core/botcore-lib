@@ -1,5 +1,5 @@
-# Dash Address
-Represents a Dash address. Addresses are the most popular way to make Dash transactions. See [the Dash documentation](https://dash-docs.github.io/en/glossary/address) for technical background information.
+# Botcoin Address
+Represents a Botcoin address. Addresses are the most popular way to make Botcoin transactions. See [the Botcoin documentation](https://botcoin-docs.github.io/en/glossary/address) for technical background information.
 
 ## Instantiate an Address
 To be able to receive some funds an address is needed, but in order to spend them a private key is necessary. Please take a look at the [`PrivateKey`](privatekey.md) docs for more information about exporting and saving a key.
@@ -62,4 +62,4 @@ var error = Address.getValidationError(input, Networks.testnet);
 }
 ```
 
-The errors are listed in the generated file in the [errors folder](https://github.com/dashevo/bitcore-dash/tree/master/lib/errors). There's a structure to errors defined in the [spec.js file](https://github.com/dashevo/bitcore-dash/tree/master/lib/errors/spec.js).
+The errors are listed in the generated file in the [errors folder](https://github.com/botcoin-core/bitcore-botcoin/tree/master/lib/errors). There's a structure to errors defined in the [spec.js file](https://github.com/botcoin-core/bitcore-botcoin/tree/master/lib/errors/spec.js).

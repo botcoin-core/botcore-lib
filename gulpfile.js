@@ -1,5 +1,5 @@
 
 
-var bitcoreTasks = require('bitcore-build-dash');
+var bitcoreTasks = require('bitcore-build-botcoin');
 
-bitcoreTasks('lib-dash');
+bitcoreTasks('lib-botcoin');

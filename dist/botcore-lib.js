@@ -19233,7 +19233,7 @@ module.exports = {
   },
 
   /**
-   * Transforms a buffer into a string with a number in hexa representation
+   * Transforms a buffer into a string with a number in hex representation
    *
    * Shorthand for <tt>buffer.toString('hex')</tt>
    *
@@ -19259,7 +19259,7 @@ module.exports = {
   },
 
   /**
-   * Transforms an hexa encoded string into a Buffer with binary values
+   * Transforms an hex encoded string into a Buffer with binary values
    *
    * Shorthand for <tt>Buffer(string, 'hex')</tt>
    *
@@ -19291,7 +19291,7 @@ var _ = __webpack_require__(2);
  *
  * @name JSUtil.isHexa
  * @param {string} value
- * @return {boolean} true if the string is the hexa representation of a number
+ * @return {boolean} true if the string is the hex representation of a number
  */
 var isHexa = function isHexa(value) {
   if (!_.isString(value)) {
@@ -21262,7 +21262,7 @@ var $ = __webpack_require__(3);
  * @param {Object} extra - additional options
  * @param {Network=} extra.network - Which network should the address for this public key be for
  * @param {String=} extra.compressed - If the public key is compressed
- * @returns {PublicKey} A new valid instance of an PublicKey
+ * @returns {PublicKey} A new valid instance of a PublicKey
  * @constructor
  */
 function PublicKey(data, extra) {
@@ -21366,7 +21366,7 @@ PublicKey._transformPrivateKey = function(privkey) {
 /**
  * Internal function to transform DER into a public key point
  *
- * @param {Buffer} buf - An hex encoded buffer
+ * @param {Buffer} buf - A hex encoded buffer
  * @param {bool=} strict - if set to false, will loosen some conditions
  * @returns {Object} An object with keys: point and compressed
  * @private
@@ -31288,7 +31288,7 @@ Address._classifyFromVersion = function(buffer) {
 };
 
 /**
- * Internal function to transform a bitcoin address buffer
+ * Internal function to transform a Bitcoin address buffer
  *
  * @param {Buffer} buffer - An instance of a hex encoded address Buffer
  * @param {string=} network - The network: 'livenet' or 'testnet'
@@ -31481,7 +31481,7 @@ Address.fromBuffer = function(buffer, network, type) {
 /**
  * Instantiate an address from an address string
  *
- * @param {string} str - An string of the bitcoin address
+ * @param {string} str - A string of the Bitcoin address
  * @param {String|Network=} network - either a Network instance, 'livenet', or 'testnet'
  * @param {string=} type - The type of address: 'script' or 'pubkey'
  * @returns {Address} A new valid and frozen instance of an Address
@@ -31587,7 +31587,7 @@ Address.prototype.toObject = Address.prototype.toJSON = function toObject() {
 };
 
 /**
- * Will return a the string representation of the address
+ * Will return a string representation of the address
  *
  * @returns {string} Bitcoin address
  */
@@ -33336,7 +33336,7 @@ var $ = __webpack_require__(3);
  *
  * @param {string} data - The encoded data in various formats
  * @param {Network|string=} network - a {@link Network} object, or a string with the network name
- * @returns {PrivateKey} A new valid instance of an PrivateKey
+ * @returns {PrivateKey} A new valid instance of a PrivateKey
  * @constructor
  */
 function PrivateKey(data, network) {
@@ -33354,7 +33354,7 @@ function PrivateKey(data, network) {
 
   // validation
   if (!info.bn || info.bn.cmp(new BN(0)) === 0){
-    throw new TypeError('Number can not be equal to zero, undefined, null or false');
+    throw new TypeError('Number cannot be equal to zero, undefined, null or false');
   }
   if (!info.bn.lt(Point.getN())) {
     throw new TypeError('Number must be less than N');
@@ -41936,7 +41936,7 @@ Transaction.prototype._getHash = function() {
 };
 
 /**
- * Retrieve a hexa string that can be used with bitcoind's CLI interface
+ * Retrieve a hex string that can be used with bitcoind's CLI interface
  * (decoderawtransaction, sendrawtransaction)
  *
  * @param {Object|boolean=} unsafe if true, skip all tests. if it's an object,
@@ -41962,7 +41962,7 @@ Transaction.prototype.uncheckedSerialize = Transaction.prototype.toString = func
 };
 
 /**
- * Retrieve a hexa string that can be used with bitcoind's CLI interface
+ * Retrieve a hex string that can be used with bitcoind's CLI interface
  * (decoderawtransaction, sendrawtransaction)
  *
  * @param {Object} opts allows to skip certain tests. {@see Transaction#serialize}
@@ -43090,7 +43090,7 @@ var UNITS = {
  *
  * @param {Number} amount - The amount to be represented
  * @param {String|Number} code - The unit of the amount or the exchange rate
- * @returns {Unit} A new instance of an Unit
+ * @returns {Unit} A new instance of a Unit
  * @constructor
  */
 function Unit(amount, code) {
@@ -43262,7 +43262,7 @@ Unit.prototype.atRate = function(rate) {
 };
 
 /**
- * Returns a the string representation of the value in satoshis
+ * Returns a string representation of the value in satoshis
  *
  * @returns {string} the value in satoshis
  */
@@ -51970,8 +51970,8 @@ var BufferUtil = __webpack_require__(5);
 var JSUtil = __webpack_require__(6);
 
 /**
- * A bitcoin transaction script. Each transaction's inputs and outputs
- * has a script that is evaluated to validate it's spending.
+ * A Bitcoin transaction script. Each transaction's inputs and outputs
+ * has a script that is evaluated to validate its spending.
  *
  * See https://en.bitcoin.it/wiki/Script
  *
@@ -53325,7 +53325,7 @@ MerkleBlock.prototype.validMerkleTree = function validMerkleTree() {
 };
 
 /**
- * Traverse a the tree in this MerkleBlock, validating it along the way
+ * Traverse the tree in this MerkleBlock, validating it along the way
  * Modeled after Bitcoin Core merkleblock.cpp TraverseAndExtract()
  * @param {Number} - depth - Current height
  * @param {Number} - pos - Current position in the tree
@@ -54652,7 +54652,7 @@ function GovObject(serialized) {
 }
 
 /**
- * dataHex will output GovObject 'data-hex' value, should be overriden by specific object type
+ * dataHex will output GovObject 'data-hex' value, should be overridden by specific object type
  *
  */
 GovObject.prototype.dataHex = function() {
@@ -54661,7 +54661,7 @@ GovObject.prototype.dataHex = function() {
 };
 
 /**
- * GovObject instantiation method, should be overriden by specific GovObject type
+ * GovObject instantiation method, should be overridden by specific GovObject type
  *
  * @private
  */
@@ -54727,7 +54727,7 @@ GovObject.prototype.fromString = function(string) {
 };
 
 /**
- * Retrieve a hexa string that can be used with dashd's CLI interface
+ * Retrieve a hex string that can be used with dashd's CLI interface
  *
  * @param {Object} opts allows to skip certain tests. {@see Transaction#serialize}
  * @return {string}
@@ -55291,7 +55291,7 @@ module.exports = [{
     message: 'Invalid derivation argument {0}, expected string, or number and boolean'
   }, {
     name: 'InvalidEntropyArgument',
-    message: 'Invalid entropy: must be an hexa string or binary buffer, got {0}',
+    message: 'Invalid entropy: must be a hex string or binary buffer, got {0}',
     errors: [{
       name: 'TooMuchEntropy',
       message: 'Invalid entropy: more than 512 bits is non standard, got "{0}"'
@@ -55352,7 +55352,7 @@ module.exports = function isBuffer(arg) {
 /* 134 */
 /***/ (function(module, exports) {
 
-module.exports = {"_args":[["elliptic@3.0.3","/Users/awerner/GitHub/__tmp/botcore-lib"]],"_from":"elliptic@3.0.3","_id":"elliptic@3.0.3","_inBundle":false,"_integrity":"sha1-hlybQgv75VAGuflp+XoNLESWZZU=","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@3.0.3","name":"elliptic","escapedName":"elliptic","rawSpec":"3.0.3","saveSpec":null,"fetchSpec":"3.0.3"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-3.0.3.tgz","_spec":"3.0.3","_where":"/Users/awerner/GitHub/__tmp/botcore-lib","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^2.0.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"description":"EC cryptography","devDependencies":{"browserify":"^3.44.2","jscs":"^1.11.3","jshint":"^2.6.0","mocha":"^2.1.0","uglify-js":"^2.4.13"},"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"test":"make lint && mocha --reporter=spec test/*-test.js"},"version":"3.0.3"}
+module.exports = {"_args":[["elliptic@3.0.3","/Users/vall/Workspace/Projects/botcore-lib"]],"_from":"elliptic@3.0.3","_id":"elliptic@3.0.3","_inBundle":false,"_integrity":"sha1-hlybQgv75VAGuflp+XoNLESWZZU=","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@3.0.3","name":"elliptic","escapedName":"elliptic","rawSpec":"3.0.3","saveSpec":null,"fetchSpec":"3.0.3"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-3.0.3.tgz","_spec":"3.0.3","_where":"/Users/vall/Workspace/Projects/botcore-lib","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^2.0.0","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"description":"EC cryptography","devDependencies":{"browserify":"^3.44.2","jscs":"^1.11.3","jshint":"^2.6.0","mocha":"^2.1.0","uglify-js":"^2.4.13"},"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"test":"make lint && mocha --reporter=spec test/*-test.js"},"version":"3.0.3"}
 
 /***/ }),
 /* 135 */
@@ -59799,7 +59799,7 @@ module.exports.skein = function (str, format, output) {
 ///////////////  Blake //////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -60679,7 +60679,7 @@ function block(c, tweak, b, off) {
 //////////////  Luffa ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -61172,7 +61172,7 @@ module.exports = function(input, format, output) {
 //////////////  Simd ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -61654,7 +61654,7 @@ module.exports = function(input, format, output) {
 ////////////  Shavite ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -62353,7 +62353,7 @@ module.exports = function(input, format, output) {
 ////////////  Cubehash //////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -62690,7 +62690,7 @@ module.exports = function(input, format, output) {
 ///////////////  Jh /////////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -63187,7 +63187,7 @@ module.exports = function(input, format, output) {
 ///////////////  Echo ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -63476,7 +63476,7 @@ module.exports = function(input, format, output) {
 ////////////  groestl ///////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -64731,7 +64731,7 @@ module.exports = function(input, format, output) {
 //////////////  BMW /////////////////
 
 //// Written by Quantum Explorer ////
-////////// Botcoin Foundation //////////
+////////// Dash Foundation //////////
 /// Released under the MIT License //
 /////////////////////////////////////
 
@@ -75211,7 +75211,7 @@ module.exports.makeKey = makeKey
 /* 218 */
 /***/ (function(module, exports) {
 
-module.exports = {"_args":[["elliptic@6.4.0","/Users/awerner/GitHub/__tmp/botcore-lib"]],"_development":true,"_from":"elliptic@6.4.0","_id":"elliptic@6.4.0","_inBundle":false,"_integrity":"sha1-ysmvh2LIWDYYcAPI3+GT5eLq5d8=","_location":"/browserify-sign/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.4.0","name":"elliptic","escapedName":"elliptic","rawSpec":"6.4.0","saveSpec":null,"fetchSpec":"6.4.0"},"_requiredBy":["/browserify-sign"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","_spec":"6.4.0","_where":"/Users/awerner/GitHub/__tmp/botcore-lib","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.4.0"}
+module.exports = {"_args":[["elliptic@6.4.0","/Users/vall/Workspace/Projects/botcore-lib"]],"_development":true,"_from":"elliptic@6.4.0","_id":"elliptic@6.4.0","_inBundle":false,"_integrity":"sha1-ysmvh2LIWDYYcAPI3+GT5eLq5d8=","_location":"/browserify-sign/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.4.0","name":"elliptic","escapedName":"elliptic","rawSpec":"6.4.0","saveSpec":null,"fetchSpec":"6.4.0"},"_requiredBy":["/browserify-sign"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","_spec":"6.4.0","_where":"/Users/vall/Workspace/Projects/botcore-lib","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.4.0"}
 
 /***/ }),
 /* 219 */
@@ -84187,7 +84187,7 @@ function formatReturnValue(bn, enc, len) {
 /* 251 */
 /***/ (function(module, exports) {
 
-module.exports = {"_args":[["elliptic@6.4.0","/Users/awerner/GitHub/__tmp/botcore-lib"]],"_development":true,"_from":"elliptic@6.4.0","_id":"elliptic@6.4.0","_inBundle":false,"_integrity":"sha1-ysmvh2LIWDYYcAPI3+GT5eLq5d8=","_location":"/create-ecdh/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.4.0","name":"elliptic","escapedName":"elliptic","rawSpec":"6.4.0","saveSpec":null,"fetchSpec":"6.4.0"},"_requiredBy":["/create-ecdh"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","_spec":"6.4.0","_where":"/Users/awerner/GitHub/__tmp/botcore-lib","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.4.0"}
+module.exports = {"_args":[["elliptic@6.4.0","/Users/vall/Workspace/Projects/botcore-lib"]],"_development":true,"_from":"elliptic@6.4.0","_id":"elliptic@6.4.0","_inBundle":false,"_integrity":"sha1-ysmvh2LIWDYYcAPI3+GT5eLq5d8=","_location":"/create-ecdh/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.4.0","name":"elliptic","escapedName":"elliptic","rawSpec":"6.4.0","saveSpec":null,"fetchSpec":"6.4.0"},"_requiredBy":["/create-ecdh"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz","_spec":"6.4.0","_where":"/Users/vall/Workspace/Projects/botcore-lib","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.4.0"}
 
 /***/ }),
 /* 252 */
@@ -90887,8 +90887,8 @@ var Unit = __webpack_require__(81);
 /**
  * Bitcore URI
  *
- * Instantiate an URI from a bitcoin URI String or an Object. An URI instance
- * can be created with a bitcoin uri string or an object. All instances of
+ * Instantiate an URI from a Bitcoin URI String or an Object. A URI instance
+ * can be created with a Bitcoin URI string or an object. All instances of
  * URI are valid, the static method isValid allows checking before instantiation.
  *
  * All standard parameters can be found as members of the class, the address
@@ -90902,7 +90902,7 @@ var Unit = __webpack_require__(81);
  * console.log(uri.address, uri.amount);
  * ```
  *
- * @param {string|Object} data - A bitcoin URI string or an Object
+ * @param {string|Object} data - A Bitcoin URI string or an Object
  * @param {Array.<string>=} knownParams - Required non-standard params
  * @throws {TypeError} Invalid bitcoin address
  * @throws {TypeError} Invalid amount
@@ -91062,7 +91062,7 @@ URI.prototype.toObject = URI.prototype.toJSON = function toObject() {
 };
 
 /**
- * Will return a the string representation of the URI
+ * Will return a string representation of the URI
  *
  * @returns {string} Bitcoin URI string
  */
@@ -92656,7 +92656,7 @@ Message.prototype._sign = function _sign(privateKey) {
 };
 
 /**
- * Will sign a message with a given bitcoin private key.
+ * Will sign a message with a given Bitcoin private key.
  *
  * @param {PrivateKey} privateKey - An instance of PrivateKey
  * @returns {String} A base64 encoded compact signature
